@@ -1,11 +1,31 @@
 // aethiopischesmultiplizieren.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
-//
+// https://www.programmieraufgaben.ch/aufgabe/aethiopisches-multiplizieren/064fkdm4
 
 #include <iostream>
 
+using namespace std;
+
+int multipl(const int& zahl1, const int& zahl2);
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << multipl(16, 11);
+}
+
+int multipl(const int& zahl1, const int& zahl2)
+{
+    if (((zahl1 ) % 2) && zahl1 > 1)
+    {
+        return zahl2 + multipl(zahl1/2, zahl2*2);
+    }
+    else if (!((zahl1 ) % 2) && zahl1 > 1)
+    {
+        return multipl(zahl1 / 2, zahl2 * 2);
+    }
+    else
+    {
+        return zahl2;
+    }
 }
 
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"
